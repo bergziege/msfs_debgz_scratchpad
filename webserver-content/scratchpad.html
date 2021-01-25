@@ -1,0 +1,145 @@
+<html>
+<style>
+    html,
+    body,
+    #outer {
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        font-size: 1.4em;
+    }
+
+    #outer {
+        display: table;
+    }
+
+    #inner_fixed {
+        height: 35px;
+        background-color: grey;
+
+        display: table-row;
+    }
+
+    #inner_remaining {
+        background-color: #DDDDDD;
+        display: table-row;
+    }
+
+    .btn {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        /* padding: 15px 32px; */
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        width: 80px;
+        height: 80px;
+    }
+
+    #keyword {
+        background-color: #776500;
+    }
+
+    #clear {
+        background-color: #ff0000;
+    }
+
+    #number {
+        background-color: #002488;
+    }
+
+    #numberSpecial {
+        background-color: #5985ff;
+    }
+</style>
+<script src="jquery-3.5.1.min.js"></script>
+
+<body>
+
+    <div id="outer">
+
+        <div id="inner_fixed">
+            <form name="myform">
+                <textarea style="width:100%; font-size: larger;" name="scratchpad" rows="5"></textarea>
+
+                <table>
+                    <tr>
+                        <td><button class="btn" type="button" value="RWY" id="keyword">RWY</button></td>
+                        <td><button class="btn" type="button" value="QNH" id="keyword">QNH</button></td>
+                        <td><button class="btn" type="button" value=" " id="keyword">_</button></td>
+                        <td><button class="btn" type="button" value="B">B</button></td>
+                        <td><button class="btn" type="button" value="A">A</button></td>
+                        <td><button class="btn" type="button" value="C">C</button></td>
+                        <td><button class="btn" type="button" value="D">D</button></td>
+                        <td><button class="btn" type="button" value="E">E</button></td>
+                    </tr>
+                    <tr>
+                        <td><button class="btn" type="button" value="09" id="numberSpecial">09</button></td>
+                        <td><button class="btn" type="button" value="10" id="numberSpecial">10</button></td>
+                        <td></td>
+                        <td><button class="btn" type="button" value="F">F</button></td>
+                        <td><button class="btn" type="button" value="G">G</button></td>
+                        <td><button class="btn" type="button" value="H">H</button></td>
+                        <td><button class="btn" type="button" value="I">I</button></td>
+                        <td><button class="btn" type="button" value="J">J</button></td>
+                    </tr>
+                    <tr>
+                        <td><button class="btn" type="button" value="1" id="number">1</button></td>
+                        <td><button class="btn" type="button" value="2" id="number">2</button></td>
+                        <td><button class="btn" type="button" value="3" id="number">3</button></td>
+                        <td><button class="btn" type="button" value="K">K</button></td>
+                        <td><button class="btn" type="button" value="L">L</button></td>
+                        <td><button class="btn" type="button" value="M">M</button></td>
+                        <td><button class="btn" type="button" value="N">N</button></td>
+                        <td><button class="btn" type="button" value="O">O</button></td>
+                    </tr>
+                    <tr>
+                        <td><button class="btn" type="button" value="4" id="number">4</button></td>
+                        <td><button class="btn" type="button" value="5" id="number">5</button></td>
+                        <td><button class="btn" type="button" value="6" id="number">6</button></td>
+                        <td><button class="btn" type="button" value="P">P</button></td>
+                        <td><button class="btn" type="button" value="Q">Q</button></td>
+                        <td><button class="btn" type="button" value="R">R</button></td>
+                        <td><button class="btn" type="button" value="S">S</button></td>
+                        <td><button class="btn" type="button" value="T">T</button></td>
+                    </tr>
+                    <tr>
+                        <td><button class="btn" type="button" value="7" id="number">7</button></td>
+                        <td><button class="btn" type="button" value="8" id="number">8</button></td>
+                        <td><button class="btn" type="button" value="9" id="number">9</button></td>
+                        <td><button class="btn" type="button" value="U">U</button></td>
+                        <td><button class="btn" type="button" value="V">V</button></td>
+                        <td><button class="btn" type="button" value="W">W</button></td>
+                        <td><button class="btn" type="button" value="X">X</button></td>
+                        <td><button class="btn" type="button" value="Y">Z</button></td>
+                    </tr>
+                    <tr>
+                        <td><button class="btn" type="button" value="." id="numberSpecial">.</button></td>
+                        <td><button class="btn" type="button" value="0" id="number">0</button></td>
+                        <td></td>
+                        <td><button class="btn" type="button" value="Z">Z</button></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td><input class="btn" type="reset" value="Clear" id="clear" /></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+
+    </div>
+
+</body>
+<script language="javascript" type="text/javascript">
+    function addTextSpace() {
+        document.myform.scratchpad.value += " ";
+    }
+    $("button").click(function () {
+        var fired_button = $(this).val();
+        document.myform.scratchpad.value += fired_button;
+    });
+</script>
+
+</html>
